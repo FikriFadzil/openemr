@@ -579,7 +579,7 @@ if ($_POST['form_action'] == "save") {
 
             // establish a WHERE clause
             if ( $row['pc_multiple'] ) { $whereClause = "pc_multiple = '{$row['pc_multiple']}'"; }
-            else { $whereClause = "pc_eid = '$eid'"; }
+            else { $whereClause = "pc_eid = '" . intval($eid) . "'"; }
 
             if ($_POST['recurr_affect'] == 'current') {
                 // update all existing event records to exlude the current date
